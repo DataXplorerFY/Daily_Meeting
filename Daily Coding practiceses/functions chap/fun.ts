@@ -49,3 +49,10 @@ function song1(Song: string, singer?: string) {
 
 }
 song1("leo","Farhan")
+
+
+function Add(num:number, num1:number) {
+    return num + num1;
+}
+
+Add(10,20)
