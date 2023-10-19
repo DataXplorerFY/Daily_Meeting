@@ -56,3 +56,9 @@ function Add(num:number, num1:number) {
 }
 
 Add(10,20)
+
+function Add1(num:number, num1:number) {
+    return num - num1;
+}
+
+Add1(10,20)
