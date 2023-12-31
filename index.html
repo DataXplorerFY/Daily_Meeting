@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="light-green-bg">
+        <div id="welcome-screen">
+            <h1>Welcome to Orange Farm</h1>
+            <div id="footer-buttons">
+                <button onclick="startAsGuest()">Use as Guest</button>
+                <button onclick="showLoginScreen()">Login/Signup</button>
+            </div>
+        </div>
+        <div id="camera-screen" class="hidden">
+            <h1>Capture Images</h1>
+            <video id="camera-preview" autoplay></video>
+            <div id="captured-images"></div>
+            <button onclick="captureImage()">Capture Image</button>
+            <button onclick="processImages()">Process Images</button>
+        </div>
+        <div id="summary-screen" class="hidden">
+            <h1>Summary</h1>
+            <div id="summary-content">
+                <p id="tree-name">Tree Name: Orange Tree</p>
+                <p id="fruit-count">Fruits Counting: </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
