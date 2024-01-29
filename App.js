@@ -1,39 +1,27 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/Home';
+import Signup from './src/Signup';
+import Login from './src/Login';
+import CameraScreen from './src/CameraScreen';
+import ButtonHome from './src/ButtonHome';
+import Summary from './src/Summary'; 
 
-  
+const Stack = createNativeStackNavigator();
 
-import { StyleSheet, Text, View, Button } from 'react-native';
-
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      
-      <Text style={styles.mytext_1}>Wellcome to Fruits Count App </Text>
-      <Text style={styles.myText_2}>Powered By AI-Nexus </Text>
-      <Button title='Continue'/>
-    
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="CameraScreen" component={CameraScreen} />
+        <Stack.Screen name="Summary" component = {Summary}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  
-  container: {
-    flex: 1,
-    
-    backgroundColor: '#4CAF50',    
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  },
-  mytext_1:{
-    color:"white",
-    fontSize:20, 
-
-  },
-  myText_2:{
-    color:"white",
-    fontSize:15,
-    margin: 10, 
-
-  },
-});
+export default App;
