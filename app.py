@@ -7,7 +7,6 @@ from flask import send_file
 import io
 from collections import Counter
 from flask_cors import CORS
-import uvicorn
 
 
 app = Flask(__name__)
@@ -85,7 +84,19 @@ def count_objects_in_all_images(images):
 
 
 
+#-------------------------------------------------------#
+# def count_objects_in_all_images(images):
+#     total_orange_count = 0
+#     for img in images:
+#         object_classes = object(img.copy())  # Make a copy of the image for drawing 
+#         orange_count = object_classes.count("orange")
+#         total_orange_count += orange_count
+#         print(f"Object Count in Image: ")
+#         for obj, count in Counter(object_classes).items():
+#             print(f"{obj}s: {count}")
 
+#     print("Total Orange Count in All Images:", total_orange_count)
+#-----------------------------------------------------------------------#
 @app.route('/orange-counting', methods=['POST'])
 def orangeDetection():
     if(request.method == 'POST'):
@@ -105,8 +116,8 @@ def orangeDetection():
             return jsonify({"total_orange_count": total_orange_count})
         else:
             return jsonify({"error": "No images loaded for prediction"}), 400
-# (debug=False, host='0.0.0.0')
+
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8000, debug=True)
